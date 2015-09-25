@@ -24,6 +24,7 @@ module BookshopApp
     config.assets.paths << "#{Rails.root}/app/assets/images/admin/table"
     config.assets.paths << "#{Rails.root}/app/assets/images/admin/forms"
     config.assets.paths << "#{Rails.root}/app/assets/images/admin"
+    config.assets.paths << "#{Rails.root}/app/assets/images"
     config.assets.paths << "#{Rails.root}/public/assets/image/filename"
   end
 end
