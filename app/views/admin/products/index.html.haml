@@ -1,0 +1,48 @@
+#page-heading
+  %h1 Product list
+- if flash[:success]
+  =  render 'admin/shared/success_message'
+%table#content-table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %th.sized{:rowspan => "3"}
+      = image_tag "side_shadowleft.jpg", size: "20x300"
+    %th.topleft
+    %td#tbl-border-top
+    %th.topright
+    %th.sized{:rowspan => "3"}
+      = image_tag "side_shadowright.jpg", size: "20x300"
+  %tr
+    %td#tbl-border-left
+    %td
+      #content-table-inner
+        #table-content
+          %form#mainform{:action => ""}
+            %table#product-table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+              %tr
+                %th.table-header-repeat.line-left.minwidth-1
+                  = link_to "Product name", "#"
+                %th.table-header-repeat.line-left.minwidth-1
+                  = link_to "Category", "#"
+                %th.table-header-repeat.line-left.minwidth-1
+                  = link_to "Price", "#"
+                %th.table-header-repeat.line-left
+                  = link_to "Stock", "#"
+              = render partial: "product", collection: @products
+        %table#paging-table{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+          %tr
+            %td
+              = link_to "", admin_products_path(params.merge(page: 1)), class: "page-far-left"
+              = link_to "", admin_products_path(params.merge(page: prev_page(@products))), class: "page-left"
+              #page-info
+                Page
+                %strong= @products.current_page
+                of
+                = @products.total_pages
+              = link_to "", admin_products_path(params.merge(page: next_page(@products))), class: "page-right"
+              = link_to "", admin_products_path(params.merge(page: @products.total_pages)), class: "page-far-right"
+        .clear
+    %td#tbl-border-right
+  %tr
+    %th.sized.bottomleft
+    %td#tbl-border-bottom
+    %th.sized.bottomright

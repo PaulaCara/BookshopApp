@@ -1,0 +1,14 @@
+.table
+  %ul.current
+    %li
+      = link_to "#" do
+        %b Products
+      .select_sub.show
+        %ul.sub
+          %li
+            = link_to "Add Product", new_admin_product_path
+          %li
+            = link_to "List Products", admin_products_path
+  .nav-divider
+  .clear
+.clear

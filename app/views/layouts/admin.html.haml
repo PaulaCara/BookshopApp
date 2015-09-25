@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    !!!
+    %title Admin
+    = stylesheet_link_tag "admin/screen.css", "data-turbolinks-track" => true
+    = javascript_include_tag "application", "data-turbolinks-track" => true
+    = csrf_meta_tags
+  %body
+    #page-top-outer
+      #page-top
+        .clear
+    .clear
+    .nav-outer-repeat
+      .nav-outer
+        #nav-right
+          .showhide-account
+            = link_to destroy_user_session_path, method: "delete" do
+              = image_tag "nav_logout.gif", size: "64x14"
+          .clear
+        .nav
+          = render 'layouts/admin_navigation'
+      .clear
+    .clear
+    #content-outer
+      #content
+        = yield
+      .clear
+    .clear
+    #footer
+      .clear

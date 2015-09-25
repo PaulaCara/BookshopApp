@@ -1,0 +1,25 @@
+.main-container.col3-layout
+  .main
+    .breadcrumbs
+      %ul
+        %li.home
+          = link_to "Home", root_path, title: "Go to Home Page"
+          %span /
+        %li.category35
+          %strong= @category.label
+    .col-wrapper
+      .col-left
+        =  render 'shared/messages'
+        .page-title.category-title
+          %h1= @category.label
+        .category-products
+          - unless @products.count.zero?
+            = render 'categories/toolbar'
+
+            - @products.each_slice(4) do |products|
+              %ul.products-grid
+                = render partial: 'shared/product', collection: products
+          - unless @products.count.zero?
+            .toolbar-bottom
+              = render 'categories/toolbar'
+    = render 'shared/cart'

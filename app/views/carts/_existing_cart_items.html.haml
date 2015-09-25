@@ -1,0 +1,50 @@
+.page-title.title-buttons
+  %h1 Shopping Cart
+= form_tag update_cart_items_cart_path, method: "post" do
+  %fieldset
+    %table#shopping-cart-table.data-table.cart-table
+      %colgroup
+        %col{width: "1"}/
+        %col/
+        %col{width: "1"}/
+        %col{width: "1"}/
+        %col{width: "1"}/
+        %col{width: "1"}/
+        %col{width: "1"}/
+      %thead
+        %tr.first.last
+          %th{rowspan: "1"}
+          %th{rowspan: "1"}
+            %span.nobr Product Name
+          %th.a-center{colspan: "1"}
+            %span.nobr Unit Price
+          %th.a-center{rowspan: "1"} Qty
+          %th.a-center{colspan: "1"} Subtotal
+          %th.a-center{rowspan: "1"}
+      %tfoot
+        %tr.first.last
+          %td.a-right.last{colspan: "50"}
+            = link_to root_url, method: :get, class: "button btn-continue" do
+              %span
+                %span Continue Shopping
+            = button_tag class: "button btn-update", type: "submit" do
+              %span
+                %span Update Shopping Cart
+            = link_to remove_all_cart_items_cart_path, method: "get", id: "empty_cart_button", class: "button btn-empty", name: "update_cart_action" do
+              %span
+                %span Clear Shopping Cart
+      %tbody
+        = render partial: 'cart_item', collection: @cart.cart_items
+.cart-collaterals
+  .totals
+    %table#shopping-cart-totals-table
+      %colgroup
+        %col/
+        %col{width: "1"}/
+      %tfoot
+        %tr
+          %td.a-right{colspan: "1", style: ""}
+            %strong Grand Total
+          %td.a-right{style: ""}
+            %strong
+              %span.price= format_price(@cart.total)

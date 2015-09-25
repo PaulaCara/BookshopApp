@@ -1,0 +1,8 @@
+.main-container.col1-layout
+  .main
+    .col-main
+      .cart
+        - if @cart.cart_items.exists?
+          = render 'existing_cart_items'
+        - else
+          = render 'non_existing_cart_items'

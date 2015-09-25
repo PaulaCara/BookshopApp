@@ -1,0 +1,13 @@
+.header-container
+  .header
+    .quick-access
+      %p.welcome-msg= welcome_message
+      %ul.links
+        %li.first
+          = link_to "My Cart", cart_path(@current_cart), title: "My Cart", class: "top-link-cart"
+        - if user_signed_in?
+          %li.last
+            = link_to "Logout", destroy_user_session_path, method: "delete"
+        - else
+          %li.last
+            = link_to "Sign in", new_user_session_path

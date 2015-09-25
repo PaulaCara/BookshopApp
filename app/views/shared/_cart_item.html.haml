@@ -1,0 +1,12 @@
+- unless cart_item.id.nil?
+  %li.item
+    = link_to product_path(cart_item.product), title: cart_item.title, class: "product-image" do
+      = image_tag image_for(cart_item.product), size: "50x50", alt: cart_item.title
+    .product-details
+      = link_to remove_from_cart_path(cart_item_id: cart_item.id), method: :post do
+        %img{ title: "Remove This Item", class:  "btn-remove"}
+      %p.product-name
+        = link_to cart_item.title, product_path(cart_item.product)
+      %strong= cart_item.quantity
+      x
+      %span.price= format_price(cart_item.price)

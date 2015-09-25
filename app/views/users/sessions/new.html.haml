@@ -1,0 +1,29 @@
+.main-container.col1-layout
+  .main
+    .col-main
+      .account-login
+        .page-title
+          %h1 Login
+        = form_for(resource, as: resource_name, url: session_path(resource_name), class: "login-form") do |f|
+          = render 'shared/messages'
+          .col1-set
+            .col-1.registered-users
+              .content
+                %h2 Registered Customers
+                %p If you have an account with us, please log in.
+                %ul.form-list
+                  %li
+                    = f.label :email do
+                      Email Address
+                    .input-box
+                      = f.email_field :email, autofocus: true, id: "email", class: "input-text required-entry validate-email", required: true
+                  %li
+                    = f.label :password do
+                      Password
+                    .input-box
+                      = f.password_field :password, id: "password", class: "input-text required-entry validate-password", required: true
+            .col-1.registered-users
+              .buttons-set
+                = f.button "Login", class: 'button', type: 'submit' do
+                  %span
+                    %span Login

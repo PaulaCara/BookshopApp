@@ -1,0 +1,17 @@
+%tr.first{class: cycle("odd", "even")}
+  %td
+    = link_to product_path(cart_item.product) do
+      = image_tag image_for(cart_item.product), size: "75x75", class: "product-img"
+  %td
+    %h2.product-name
+      = link_to cart_item.product.title, product_path(cart_item.product)
+  %td.a-right
+    %span.cart-price
+      %span.price= format_price(cart_item.product.price)
+  %td.a-center
+    = text_field_tag "cart_item[#{ cart_item.id }]", cart_item.quantity, class: "input-text qty", maxlength: "12", size: "4", title: "Qty"
+  %td.a-right
+    %span.cart-price
+      %span.price= format_price(cart_item.quantity * cart_item.product.price)
+  %td.a-center.last
+    = link_to "Remove item", remove_from_cart_path(cart_item_id: cart_item.id), method: :post, class: "btn-remove btn-remove2"

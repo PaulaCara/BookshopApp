@@ -1,0 +1,14 @@
+.main-container.col3-layout
+  .main
+    .col-wrapper
+      = render 'shared/messages'
+      .col-main
+        .box.best-selling
+          %h3 Latest Products
+          %table{ cellspacing: "0", border: "0"}
+            %tbody
+              - @products.in_groups_of(2).each do |products|
+                %tr{ :class => cycle("odd", "even")}
+                  = render partial: 'product', collection: products
+      .col-left.sidebar
+    = render 'shared/cart'

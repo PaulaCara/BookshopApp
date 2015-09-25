@@ -1,0 +1,7 @@
+.nav-container
+  #nav
+    - @categories.each do |category|
+      %li.level0.nav-1.level-top.first
+        = link_to category_path(category), class: "level-top" do
+          %span
+            = category.label

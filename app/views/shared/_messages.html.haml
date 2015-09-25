@@ -1,0 +1,12 @@
+#messages_product_view
+  %ul.messages
+    - if flash[:success] || flash[:notice]
+      %li.success-msg
+        %ul
+          %li
+            %span= flash[:success] || flash[:notice]
+    - if flash[:alert]
+      %li.error-msg
+        %ul
+          %li
+            %span= flash[:alert]

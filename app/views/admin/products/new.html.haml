@@ -1,0 +1,72 @@
+#page-heading
+  %h1 Add product
+- if flash[:error]
+  =  render 'admin/shared/error_message'
+%table#content-table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+  %tr
+    %th.sized{:rowspan => "3"}
+      = image_tag "side_shadowleft.jpg", size: "20x300"
+    %th.topleft
+    %td#tbl-border-top
+    %th.topright
+    %th.sized{:rowspan => "3"}
+      = image_tag "side_shadowright.jpg", size: "20x300"
+  %tr
+    %td#tbl-border-left
+    %td
+      #content-table-inner
+        = form_for @product, url: admin_products_path(@product), method: "post", :html => { :multipart => true } do |f|
+          %table{:border => "0", :cellpadding => "0", :cellspacing => "0", :width => "100%"}
+            %tr{:valign => "top"}
+              %td
+                %table#id-form{:border => "0", :cellpadding => "0", :cellspacing => "0"}
+                  %tr
+                    %th{:valign => "top"} Product name:
+                    %td
+                      = f.text_field :title, class: "inp-form", required: true
+                    - if @product.errors[:title][0]
+                      %td
+                        .error-left
+                        .error-inner= @product.errors[:title][0].capitalize
+                  %tr
+                    %th{:valign => "top"} Category:
+                    %td
+                      = f.select :category_id, options_for_select(@categories.each.map {|category| [category.label, category.id] }, selected: params[:category], id: "category_id", class: "select")
+                    %td
+                  %tr
+                    %th{:valign => "top"} Price:
+                    %td
+                      = f.number_field :price, class: "inp-form", required: true
+                      - if @product.errors[:price][0]
+                        %td
+                          .error-left
+                          .error-inner= @product.errors[:price][0].capitalize
+                  %tr
+                    %th Image:
+                    %td
+                      = f.file_field :image
+                    - if @product.image && @product.image.errors[:filename][0]
+                      %td
+                        .error-left
+                        .error-inner= @product.image.errors[:filename][0].capitalize
+                  %tr
+                    %th{:valign => "top"} Stock:
+                    %td
+                      = f.number_field :stock, class: "inp-form", required: true
+                    - if @product.errors[:stock][0]
+                      %td
+                        .error-left
+                        .error-inner= @product.errors[:stock][0].capitalize
+                  %tr
+                    %th
+                    %td{:valign => "top"}
+                      = f.button "Submit", class: "form-submit"
+                      = f.button "Reset", class: "form-reset", type: "submit"
+                    %td
+        .clear
+    %td#tbl-border-right
+  %tr
+    %th.sized.bottomleft
+    %td#tbl-border-bottom
+    %th.sized.bottomright
+.clear

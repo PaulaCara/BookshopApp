@@ -1,0 +1,26 @@
+.col-right.sidebar
+  .block.block-cart#cart-content
+    .block-title
+      %strong
+        %span My Cart
+
+    .block-content
+      - if @current_cart.nil? || @current_cart.cart_items.count.zero?
+        %p.empty You have no items in your shopping cart
+      - else
+        .summary
+          %p.amount
+            There are
+            = link_to pluralize(@current_cart.cart_items.count, "item"), cart_path(@current_cart)
+            in your cart
+          %p.subtotal
+            %span.label Cart Subtotal:
+            %span.price
+              = format_price(@current_cart.total)
+
+        %p.block-subtitle Recently added item(s)
+
+        %ol#cart-sidebar.mini-products-list
+
+          %li.item
+            = render partial: 'shared/cart_item', collection: @current_cart.cart_items

@@ -1,0 +1,24 @@
+.toolbar
+  .pager
+    %p.amount
+      %strong= pluralize(@products.count, "item")
+    .pages
+      = will_paginate @products
+  .sorter
+    .sort-by
+      = form_tag category_path(@category), method: 'get' do
+        = label_tag "Sort By"
+        = select_tag "sort", options_for_select([["Name", "title"], ["Price", "price"]], selected: params[:sort])
+        \
+        = label_tag "Direction"
+        = select_tag "direction", options_for_select([["Asc", "ASC"], ["Desc", "DESC"]], selected: params[:direction])
+        - if params[:stock]
+          = hidden_field_tag "stock", params[:stock]
+        - if params[:lower_price] && params[:higher_price]
+          = hidden_field_tag "lower_price", params[:lower_price]
+          = hidden_field_tag "higher_price", params[:higher_price]
+        - if params[:search]
+          = hidden_field_tag "search", params[:search]
+        - if params[:category]
+          = hidden_field_tag "category", params[:category]
+        = submit_tag "Go!"

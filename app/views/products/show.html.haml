@@ -1,0 +1,45 @@
+.main-container.col2-left-layout
+  .main
+    .breadcrumbs
+      %ul
+        %li.home
+          = link_to "Home", root_path
+          %span /
+        %li.category10
+          = link_to @product.category.label, category_path(@product.category), title: @product.category.label
+          %span /
+        %li.product
+          %strong= @product.title
+    .col-main
+      = render 'shared/messages'
+      .product-view
+        .product-essential
+          = form_tag add_to_cart_path, method: 'post' do
+            .product-shop
+              .product-name
+                %h1= @product.title
+
+              %p.availability.in-stock
+                Availability:
+                %span= availability(@product.stock)
+
+              .price-box
+                %span.regular-price#product-price-MyProductID
+                  %span.price= format_price(@product.price)
+
+              - unless @product.stock.zero?
+                .add-to-box
+                  .add-to-cart
+                    = label_tag "quantity", "Qty:"
+                    = hidden_field_tag "product_id", @product.id
+                    = text_field_tag "quantity", "1", maxlength: "12", title: "Qty", class: "input-text qty"
+                    = button_tag( name: "Add to Cart", class: "button btn-cart") do
+                      %span
+                        %span Add to Cart
+
+            .product-img-box
+              %p.product-image.product-image-zoom
+                = image_tag image_for(@product)
+          %p
+            = link_to :back do
+              %span &laquo; Back to list

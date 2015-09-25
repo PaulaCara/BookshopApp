@@ -1,0 +1,17 @@
+%li.item
+  .product-image
+    = link_to product_path(product) do
+      = image_tag image_for(product), size: "135x135", alt: product.title
+  %h2.product-name
+    = link_to product.title, product_path(product)
+  .price-box
+    %span#product-price-168.regular-price
+      %span.price= format_price(product.price)
+  - unless product.stock.zero?
+    .actions
+      = form_tag add_to_cart_path do
+        = hidden_field_tag "product_id", product.id
+        = hidden_field_tag "quantity", 1
+        = button_tag "Add to cart", class: "button btn-cart" do
+          %span
+            %span Add to Cart

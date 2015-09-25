@@ -1,0 +1,3 @@
+%li
+  = link_to category_path(@category, params.merge(category: category.id)) do
+    %span= category.label

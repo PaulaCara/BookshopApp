@@ -1,0 +1,5 @@
+%tr{ class: cycle("", "alternate-row") }
+  %td= product.title
+  %td= product.category.label
+  %td= format_price(product.price)
+  %td= product_availability(product.stock)
