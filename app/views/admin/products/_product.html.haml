@@ -3,3 +3,5 @@
   %td= product.category.label
   %td= format_price(product.price)
   %td= product_availability(product.stock)
+  %td.options-width
+    = link_to "", admin_product_path(product), method: :delete, class: "icon-2 info-tooltip"

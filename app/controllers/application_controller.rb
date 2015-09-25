@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def create_cart
     @cart = Cart.new
-    # @cart.update_attribute(:user_id, 3)
+
     if @cart.save
       session[:cart_id] = @cart.id
     end
@@ -39,7 +39,7 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     unless user_signed_in?
-      flash[:alert] = "You need to sign in or sign up before continuing."
+      flash[:alert] = 'You need to sign in or sign up before continuing.'
       redirect_to new_user_session_path
     end
   end

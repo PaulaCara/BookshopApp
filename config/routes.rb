@@ -20,29 +20,7 @@ BookshopApp::Application.routes.draw do
   end
   
   namespace :admin do
-    # resources :users do
-    #   member do
-    #     post 'change_status'
-    #   end
-    # end
-
     resources :products
-  end
-
-  resource :checkout do
-    member do
-      get 'billing_information'
-      post 'create_billing_address'
-      get 'shipping_information'
-      post 'create_shipping_address'
-      get 'shipping_method'
-      post 'add_shipping_method'
-      get 'payment_method'
-      post 'add_payment_method'
-      get 'order_review'
-      get 'place_order'
-      get 'order_details'
-    end
   end
 
   resources :categories

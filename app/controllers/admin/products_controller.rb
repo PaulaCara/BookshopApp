@@ -27,7 +27,9 @@ class Admin::ProductsController < ApplicationController
   end
 
   def destroy
-    Product.find_by(id: params[:id]).destroy
+    @product = Product.find_by(id: params[:id])
+    @product.image.destroy
+    @product.destroy
     flash[:success] = "Product removed successfully."
 
     redirect_to admin_products_path

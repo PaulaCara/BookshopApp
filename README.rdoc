@@ -1,14 +1,25 @@
 == README
 
 This is a Bookshop application which has the following features:
-    * login (the user is redirected on the sites' private/public area based on his role)
 
-The public area (can be accessed either by an anonymous user or by an authenticated one (which is not an admin))
+The public area (can be accessed both by an anonymous user and by an authenticated one)
     * view products by category + pagination
     * view single product
     * sort products based on name and price
     * add product to cart
+    * when a user loggs in and he already has products in an anonymous shopping cart,
+      the latest will be merged with the user's cart
 
 The private area (can be only accessed by an authenticated user)
     * add product (image, title, price, stock, category)
+    * remove product
     * see all the products + pagination
+
+The credentials for an admin:
+    * email: 'admin@yopmail.com'
+    * password: 'passpass'
+
+The credentials for a user:
+    * email: 'smith@yopmail.com'
+    * password: 'passpass'
+

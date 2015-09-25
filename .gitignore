@@ -1,0 +1,13 @@
+
+# db config
+config/database.yml
+
+# initial data
+insert.sql
+insert.sql~
+users.sql
+users.sql~
+
+.gitignore~
+.idea/*
+tmp/*

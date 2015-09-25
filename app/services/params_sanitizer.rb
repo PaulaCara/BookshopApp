@@ -23,6 +23,6 @@ class ParamsSanitizer
   end
 
   def sanitize_category
-    @params[:category] = nil if @params[:category] == ""
+    @params[:category] = nil if @params[:category] == ''
   end
 end

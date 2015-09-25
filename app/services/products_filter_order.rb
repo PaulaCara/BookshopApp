@@ -21,7 +21,7 @@ class ProductsFilterOrder
   end
 
   def paginate
-    @products = @products.paginate(page: 1, per_page: 9)
+    @products = @products.paginate(page: 1, per_page: 8)
 
     @params[:page] = 1 unless (1..@products.total_pages).include?(@params[:page].to_i)
     @products = @products.page(@params[:page])

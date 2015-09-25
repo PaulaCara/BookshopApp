@@ -4,7 +4,7 @@ table.jCalendar	{
     border-collapse: collapse;
 }
 table.jCalendar th	{
-    background: url(../images/admin/cal_th_repeat.jpg) repeat-x;
+    background: url(cal_th_repeat.jpg) repeat-x;
     color: #fff;
     font-weight: bold;
     padding: 8px 8px;
@@ -63,7 +63,7 @@ table.jCalendar td.unselectable.dp-hover	{
 
 /* NOTE - you will probably want to style a.dp-choose-date - see how I did it in demo.css */
 div.dp-popup	{
-    background: url(../images/admin/cal_top_repeat.jpg) repeat-x;
+    background: url(cal_top_repeat.jpg) repeat-x;
     border: 1px solid #c7c7c7;
     font-family: arial, sans-serif;
     font-size: 10px;
@@ -97,7 +97,7 @@ div.dp-popup a	{
     text-decoration: none;
 }
 div.dp-popup div.dp-nav-prev	{
-    background: url(../images/admin/year_prev.gif) no-repeat 0 6px;
+    background: url(year_prev.gif) no-repeat 0 6px;
     left: 20px;
     position: absolute;
     text-indent: -3000px;
@@ -117,7 +117,7 @@ div.dp-popup div.dp-nav-prev a.disabled, div.dp-popup div.dp-nav-next a.disabled
     cursor: default;
 }
 div.dp-popup div.dp-nav-next	{
-    background: url(../images/admin/year_next.gif) no-repeat 6px 6px;
+    background: url(year_next.gif) no-repeat 6px 6px;
     position: absolute;
     right: 20px;
     text-indent: -3000px;

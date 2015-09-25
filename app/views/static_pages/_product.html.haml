@@ -1,7 +1,7 @@
-= if product
+- if product
   %td
     = link_to product_path(product) do
-      = image_tag image_for(product),  width: "95", class: "product-img"
+      = image_tag image_for(product),  width: '95', class: 'product-img'
     .product-description
       %p
         = link_to product.title, product_path(product)
