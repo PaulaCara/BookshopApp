@@ -1,28 +1,14 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a Bookshop application which has the following features:
+    * login (the user is redirected on the sites' private/public area based on his role)
 
-Things you may want to cover:
+The public area (can be accessed either by an anonymous user or by an authenticated one (which is not an admin))
+    * view products by category + pagination
+    * view single product
+    * sort products based on name and price
+    * add product to cart
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+The private area (can be only accessed by an authenticated user)
+    * add product (image, title, price, stock, category)
+    * see all the products + pagination
