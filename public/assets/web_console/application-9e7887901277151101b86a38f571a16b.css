@@ -8,7 +8,11 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require_self
- *= require_tree .
- *= require admin/screen.css.erb
+
+
  */
+
+  body { color: #000000; background: #ffffff; margin: 0; padding: 0; }
+
+  .terminal { float: left; overflow: hidden; font: large DejaVu Sans Mono, Liberation Mono, monospace; }
+  .terminal-cursor { color: #ffffff; background: #000000; }
