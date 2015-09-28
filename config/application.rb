@@ -19,7 +19,7 @@ module BookshopApp
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-    config.assets.precompile += %w( *.jpg *gif *.css *.erb )
+    config.assets.precompile += %w( *.jpg *.gif *.jpg *.css *.erb )
 
     config.assets.paths << "#{Rails.root}/app/assets/images/login"
     config.assets.paths << "#{Rails.root}/app/assets/images/widgets"
