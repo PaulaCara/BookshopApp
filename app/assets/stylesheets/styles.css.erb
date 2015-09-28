@@ -26,7 +26,7 @@
 /* Reset ================================================================================= */
 * { margin:0; padding:0; }
 
-body          { background:#496778 url(bkg_body.gif) 50% 0 repeat-y; font:12px/1.55 Arial, Helvetica, sans-serif; color:#2f2f2f; text-align:center; }
+body          { background:#496778 url(<%= asset_path 'bkg_body.gif' %>) 50% 0 repeat-y; font:12px/1.55 Arial, Helvetica, sans-serif; color:#2f2f2f; text-align:center; }
 
 img           { border:0; vertical-align:top; }
 
@@ -401,11 +401,11 @@ p.required { font-size:11px; text-align:right; color:#EB340A; }
 .data-table thead th.wrap { white-space:normal; }
 .data-table thead th a,
 .data-table thead th a:hover { color:#fff; }
-.data-table thead th { background:url(bkg_th.gif) repeat-x 0 100% #d9e5ee; }
+.data-table thead th { background:url(<%= asset_path 'bkg_th.gif' %>) repeat-x 0 100% #d9e5ee; }
 .data-table thead th .tax-flag { font-size:11px; white-space:nowrap; }
 
 .data-table tfoot { border-bottom:1px solid #d9dde3; }
-.data-table tfoot tr.first td { background:url(bkg_tfoot.gif) 0 0 repeat-x; }
+.data-table tfoot tr.first td { background:url(<%= asset_path 'bkg_tfoot.gif' %>) 0 0 repeat-x; }
 .data-table tfoot tr { background-color:#dee5e8 !important; }
 .data-table tfoot td { padding-top:1px; padding-bottom:1px; border-bottom:0; border-right:1px solid #d9dde3; }
 .data-table tfoot strong { font-size:16px; }
@@ -490,7 +490,7 @@ tr.summary-details-excluded { font-style:italic; }
 .link-rss { background:url(i_rss.gif) 0 2px no-repeat; padding-left:18px; line-height:14px; white-space:nowrap; }
 .btn-remove  { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(<%= asset_path 'btn_remove.gif' %>) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
 .btn-previous  { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(btn_previous.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
-.btn-remove2 { display:block; width:16px; height:16px; font-size:0; line-height:0; background:url(btn_trash.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
+.btn-remove2 { display:block; width:16px; height:16px; font-size:0; line-height:0; background:url(<%= asset_path 'btn_trash.gif' %>) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
 .btn-edit    { display:block; width:11px; height:11px; font-size:0; line-height:0; background:url(btn_edit.gif) 0 0 no-repeat; text-indent:-999em; overflow:hidden; }
 
 .cards-list dt { margin:5px 0 0; }
